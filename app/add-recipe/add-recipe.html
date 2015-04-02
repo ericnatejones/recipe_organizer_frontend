@@ -1,0 +1,82 @@
+
+<div class="container">
+    <h1>Add a new recipe
+    </h1>
+    <div class = "form-group col-sm-3">
+        <form>
+            <label>Recipe Name</label>
+            <input class="form-control" ng-model="recipe.name">
+
+            <label>Recipe Description</label>
+            <textarea class="form-control" ng-model="recipe.description"></textarea>
+
+
+            <label class="cool-label">Recipe Directions</label>
+            <textarea class="form-control" ng-model="recipe.directions"></textarea>
+
+            <label class="cool-label">Url of Picture of Recipe</label>
+            <textarea class="form-control" ng-model="recipe.photo_url"></textarea>
+
+            <label>Ingredients (click to add)</label>
+
+            <br>
+        </form>
+        Search: <input id="ingredientSearch" type="text" ng-model="searchTerm"/>
+        <p>
+            <div class="container-fluid-ingredient-list">
+                <div class="btn-group">
+                    <div ng-repeat="ingredient in ingredients | orderBy:'name' | filter:searchTerm">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li>
+                                <button ng-click="ingredientClicked(ingredient.name)">
+                                    {{ ingredient.name}}
+                                </button>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </p>
+        <label>My Ingredients</label>
+
+        <div class="container-fluid-ingredient-list">
+            <div class="btn-group">
+
+                <div ng-repeat="ingredient in recipe.ingredients">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li>
+                            <button ng-click="removeIngredient(ingredient.name)">
+                                {{ ingredient.name}}
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p>
+            <button type="button" class="btn btn-md btn-success" ng-click="addRecipe()">
+                <span class="glyphicon glyphicon-cloud-upload ">
+                </span>  Save Recipe
+            </button>
+        </p>
+        <br>
+        <p>
+            Can't find an ingredient?
+            <input id="addIngredientBox" type="checkbox" ng-model="addingIngredientsToDB">
+
+        </p>
+        <div ng-show="addingIngredientsToDB">
+            <p>
+                <input ng-model="ingredientName">
+            </p>
+            <p>
+                <button type="button" class="btn btn-sm btn-primary" ng-click="addIngredientToRecipe(ingredientName)">
+                     <span class="glyphicon glyphicon-hand-right "></span> Add ingredient to database
+                </button>
+            </p>
+        </div>
+
+    </div>
+</div>

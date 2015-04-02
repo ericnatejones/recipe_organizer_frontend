@@ -1,0 +1,39 @@
+
+
+
+<div class="jumbotron">
+    <img style="float:right;width:500px;height:250px;padding-right: 100px;padding-bottom: 20px;border-right-width: 50px;" src="{{ recipe.photo_url }}">
+
+  <h1>{{ recipe.name }}</h1>
+  <div class="bs-example">
+      <div class="bs-example">
+          <h6>{{ recipe.description }}</h6>
+
+      </div>
+     <div>
+         <container>
+            <p>{{ recipe.directions }}</p>
+         </container>
+     </div>
+
+
+      <ul ng-repeat="ingredient in recipe.ingredients">
+
+          <li>{{ ingredient.name }}</li>
+     </ul>
+  </div>
+  <p><a class="btn btn-primary btn-lg" href="#/list_of_recipes" role="button">Return to list of recipes</a></p>
+    <button class="btn btn-danger" ng-click="deleteRecipe()"><span class="glyphicon glyphicon-trash"></span> Delete Recipe</button>
+</div>
+
+
+<textarea ng-model="Comment"></textarea>
+<button ng-click="submitComment()">Submit Comment</button>
+
+<br/>
+    Comments:
+    <br/>
+    <p ng-repeat="comment in recipe.comments">
+        {{comment.text}}
+    </p>
+

@@ -1,0 +1,55 @@
+<h1>Type of Dish?</h1>
+<br>
+<p>
+
+
+    <button type="button" class="btn btn-lg btn-success" ng-click="finished = 'Desert'">Desert</button>
+
+    <button type="button" class="btn btn-lg btn-primary" ng-click="finished = 'Dinner'">Dinner</button>
+
+    <button type="button" class="btn btn-lg btn-info" ng-click="finished = 'Breakfast'">Breakfast</button>
+
+    <button type="button" class="btn btn-lg btn-warning" ng-click="finished = 'Lunch'">Lunch</button>
+</p>
+<h3>{{finished}}</h3>
+<h1>What ingredients do you have?</h1>
+<br>
+
+
+    <!--<form action="demo_form.asp">-->
+
+        <button type="button" class="btn btn-md btn-default" ng-repeat="ingredient in ingredients" ng-click="checkbox = 'toggle'">
+            {{ingredient.name}}<br>
+            <input type="checkbox" name= " ingredients" value= " ingredient" checked >
+
+
+
+        </button>
+
+    <!--</form>-->
+
+
+<h1>Here are some suggestions!</h1>
+Search: <input ng-model="searchTerm"/>
+
+<br>
+<br>
+
+<div ng-repeat="recipe in recipes | orderBy:'name' | filter:searchTerm">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img img class=img-responsive style="float:right;width:150px;height:100px; border:2px solid black " hspace= 13; vspace=13;  alt="recipe photo" src="{{recipe.photo_url}}">
+
+      <div class="caption">
+        <h3> {{recipe.name}}</h3>
+        <p> {{recipe.description}}</p>
+        <button><a href="#/recipes/{{recipe.id}}" > Details<br></a></button>
+      </div>
+    </div>
+    <br>
+  </div>
+
+</div>
+
+<div class="caption"><h3> If you do not find your recipe here,<div></div> consider <a href="#/add-recipe" > adding<br></a>your own recipe! </h3></div>
+

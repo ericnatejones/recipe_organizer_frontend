@@ -1,5 +1,27 @@
 /* app css stylesheet */
 
+body {
+
+  text-shadow: 0.1em 0.1em #dfd4bf;
+  background-image: url("https://d3ui957tjb5bqd.cloudfront.net/images/screenshots/products/10/106/106396/keih4mm9pyv3kpq8scymlnub2aecxzs9iscdane82nvbmfcc3leqqh7pjk0adoki-o.jpg?1399222056");
+
+  /**/
+
+  /*background-attachment:fixed;*/
+
+}
+
+.container-fluid-ingredient-list {
+  margin-bottom: 1%;
+  margin-top: 1%;
+  width:100%;
+  /*margin:0 auto;*/
+  position:relative;
+  overflow: auto;
+  height: 100px;
+  /*overflow-scrolling: ;*/
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -27,4 +49,58 @@
 .menu > li:nth-child(1):before {
   content: "";
   padding: 0;
+}
+
+.navbar-default {
+  background-color:#f4f4f4;
+  margin-top:20px;
+  border-width:0;
+  z-index:0;
+
+}
+
+.button {
+    background-color: #1eb6df;
+    color: #FFFFFF;
+    font-size: 60px;
+    padding: 10px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    text-wrap: normal ;
+    white-space: normal;
+
+}
+
+.small-btn {
+    width: 50px;
+    height: 20px;
+}
+
+.medium-btn {
+    width: 70px;
+    height: 30px;
+}
+
+.big-btn {
+    width: 400px;
+    height: 200px;
+}
+
+.thumbnail {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+/*input[type=checkbox]*/
+/*{*/
+  /* Double-sized Checkboxes */
+  /*-ms-transform: scale(2); *//* IE */
+  /*-moz-transform: scale(2); *//* FF */
+  /*-webkit-transform: scale(2); *//* Safari and Chrome */
+  /*-o-transform: scale(2); *//* Opera */
+  /*padding: 10px;*/
+/*}*/
+
+h1 {
+  color: #000000;
+  text-shadow: 0.05em 0.05em #ffffff;
 }

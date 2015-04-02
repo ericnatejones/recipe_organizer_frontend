@@ -1,12 +1,19 @@
 'use strict';
-
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
-]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+    'restangular',
+    'ngRoute',
+    'myApp.recipes',
+    'myApp.add-recipe',
+    'myApp.version',
+    'myApp.questions',
+    'myApp.list_of_recipes',
+    'myApp.recipeDetail'
+])
+    .config(['$routeProvider', 'RestangularProvider', function ($routeProvider, RestangularProvider) {
+        $routeProvider
+            .otherwise({redirectTo: '/list_of_recipes'});
+
+        RestangularProvider.setBaseUrl('http://localhost:8001')
+    }]);
+
